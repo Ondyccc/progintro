@@ -1,0 +1,6 @@
+
+d = float(input("Délka [mm]:" ))
+cm= d/10
+m= d/100
+p= d/25.4
+print(f"{d:.2f} mm = {cm:.2f} cm = {m:.2f} m = {p:.2f} in")
