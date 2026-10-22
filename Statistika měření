@@ -1,0 +1,39 @@
+import numpy
+values = input("Zadejte data oddělená čárkou: ")
+
+def mean(values):
+    values_list = [float(value) for value in values.split(",")]
+    return numpy.mean(values_list)
+
+def median(values):
+    values_list = [float(value) for value in values.split(",")]
+    return numpy.median(values_list)
+
+def std_dev(values):
+    values_list = [float(value) for value in values.split(",")]
+    return numpy.std(values_list)
+
+def min(values):
+    values_list = [float(value) for value in values.split(",")]
+    a = values_list[0]
+    for x in values_list:
+        if x < a:
+            a = x
+    return a
+
+def max(values):
+    values_list = [float(value) for value in values.split(",")]
+    b = values_list[0]
+    for x in values_list:
+        if x > b:
+            b = x
+    return b
+def summary(values):
+    print("Průměr zadaných hodnot je:", mean(values))
+    print("Medián zadaných hodnot je:", median(values))
+    print("Směrodatná odchylka zadaných hodnot je:", std_dev(values))
+    print("Nejmenší hodnota zadaných hodnot je:", min(values))
+    print("Největší hodnota zadaných hodnot je:", max(values))
+
+summary(values)
+
