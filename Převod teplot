@@ -1,0 +1,22 @@
+import numpy
+value = float(input("Zadejte hodnotu teploty: "))
+from_unit = (input("Zadejte jednotku teploty (C, F, K): "))
+to_unit = (input("Zadejte jednotku, do které chcete převést (C, F, K): "))
+x = ("neplatná jednotka")
+def convert_temperature(value, from_unit, to_unit):
+    if from_unit == "C" and to_unit == "F":
+        return value * 9/5 + 32 
+    elif from_unit == "F" and to_unit == "C":
+        return (value - 32) * 5/9 
+    elif from_unit == "C" and to_unit == "K":
+        return value + 273.15 
+    elif from_unit == "K" and to_unit == "C":
+        return value - 273.15 
+    elif from_unit == "F" and to_unit == "K":
+        return (value - 32) * 5/9 + 273.15 
+    elif from_unit == "K" and to_unit == "F":
+        return (value - 273.15) * 9/5 + 32 
+    else:
+        return x
+
+print(f"{value} {from_unit} je {convert_temperature(value, from_unit, to_unit)} {to_unit}")

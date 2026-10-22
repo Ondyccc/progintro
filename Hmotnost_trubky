@@ -1,0 +1,21 @@
+import numpy   
+d_out = float(input("Zadejte vnější průměr trubky v m: "))
+d_in = float(input("Zadejte vnitřní průměr trubky v m: "))
+delka = float(input("Zadejte délku trubky v m: "))
+hustota = float(input("Zadejte hustotu oceli v kg/m^3: ")) 
+#obsah kurhu
+def circle_area(d):
+    return numpy.pi * (d / 2) ** 2
+
+#obsah průřezu trubky
+s_trubka = circle_area(d_out) - circle_area(d_in)
+
+#hmotnost
+def trubka(d_out, d_in, delka, hustota=7850):
+    s_trubka = circle_area(d_out) - circle_area(d_in)
+    objem = s_trubka * delka
+    hmotnost = objem * hustota
+    return hmotnost
+print("Obsah vnějšího průřezu:", circle_area(d_out))
+print("Obsah průřezu trubky:", s_trubka)
+print("Hmotnost trubky:", trubka(d_out, d_in, delka, hustota=7850), "kg")
