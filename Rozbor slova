@@ -1,0 +1,15 @@
+s = input("zadej slovo:")
+
+znk = len(s)
+fz = s[0]
+ez= s[-1]
+vp = s.upper()
+poz = s [::-1]
+pal = True if s == s[::-1] else False
+
+print(fz)
+print(ez)
+print(vp)
+print(znk)
+print(poz)
+print(pal)
